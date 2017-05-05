@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{D221340E-BE0C-413D-9505-5C61D42FE61D}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>test</RootNamespace>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <AssemblyName>test</AssemblyName>
+    <XamarinInsightsApiKey>6e13bd7ee5cc0e87aab35f52a1736152a96a0f80</XamarinInsightsApiKey>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchArch>i386</MtouchArch>
+    <MtouchLink>None</MtouchLink>
+    <MtouchFastDev>true</MtouchFastDev>
+    <MtouchDebug>true</MtouchDebug>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchProfiling>true</MtouchProfiling>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchFloat32>true</MtouchFloat32>
+    <CodesignKey>iPhone Developer</CodesignKey>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchArch>i386</MtouchArch>
+    <MtouchLink>None</MtouchLink>
+    <CodesignKey>iPhone Developer</CodesignKey>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchFloat32>true</MtouchFloat32>
+    <CodesignKey>iPhone Developer: Kenneth Chau (3HRLUNG8YK)</CodesignKey>
+    <DeviceSpecificBuild>true</DeviceSpecificBuild>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchProfiling>true</MtouchProfiling>
+    <IpaPackageName>
+    </IpaPackageName>
+    <CodesignProvision>5d2edbb1-0400-4c9c-bab6-eef6ef80dae9</CodesignProvision>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.iOS" />
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\First.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\First.imageset\First.pdf" />
+    <ImageAsset Include="Resources\Images.xcassets\Second.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\Second.imageset\Second.pdf" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="Resources\LaunchScreen.xib" />
+    <InterfaceDefinition Include="Main.storyboard" />
+    <InterfaceDefinition Include="SecondStoryboard.storyboard" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Info.plist" />
+    <None Include="Entitlements.plist" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="FirstViewController.cs" />
+    <Compile Include="FirstViewController.designer.cs">
+      <DependentUpon>FirstViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppDelegate.designer.cs">
+      <DependentUpon>AppDelegate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SameProjSBViewController.cs" />
+    <Compile Include="SameProjSBViewController.designer.cs">
+      <DependentUpon>SameProjSBViewController.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\test.lib\test.lib.csproj">
+      <Project>{463D9DE0-6A2E-4F8A-96F9-C083D06952F8}</Project>
+      <Name>test.lib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+</Project>
